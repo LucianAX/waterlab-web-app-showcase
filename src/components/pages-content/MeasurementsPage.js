@@ -13,7 +13,10 @@ function MeasurementsPage(props) {
   
   return (<>
     {/* <!-- Page Heading --> */}
-    <h1 className="h1 mb-2 text-gray-800">Measurements</h1>
+    <h1 className="h1 mb-2 text-gray-800"
+        style={{ textAlign: 'center' }}>
+            Measurements
+    </h1>
 
     {/* Warnings section */}
     <div>
@@ -24,37 +27,37 @@ function MeasurementsPage(props) {
 
     {/* Measurements Section */}
     <div>
-        <div class="text-xs font-weight-bold text-uppercase mb-1">
+        <div className="text-xs font-weight-bold text-uppercase mb-1">
             <h2>Measurements - All Devices</h2>
         </div>
         
 
-        <div class="row">
+        <div className="row">
 
             {/* pH Levels */}
-            <div class="col-xl-12 col-lg-12" style={{ width: "100%" }}>
-                <div class="card border-left-warning shadow mb-4">
+            <div className="col-xl-12 col-lg-12" style={{ width: "100%" }}>
+                <div className="card border-left-warning shadow mb-4">
                     {/* <!-- Card Header - Dropdown --> */}
                     <div
-                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">pH Levels</h6>
-                        <div class="dropdown no-arrow">
-                            <a class="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
+                        className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 className="m-0 font-weight-bold text-primary">pH Levels</h6>
+                        <div className="dropdown no-arrow">
+                            <a className="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                 aria-labelledby="dropdownMenuLink">
-                                <div class="dropdown-header">Choose an option:</div>
-                                <a class="dropdown-item" href="#">Reload data</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Close</a>
+                                <div className="dropdown-header">Choose an option:</div>
+                                <a className="dropdown-item" href="#">Reload data</a>
+                                <div className="dropdown-divider"></div>
+                                <a className="dropdown-item" href="#">Close</a>
                             </div>
                         </div>
                     </div>
                     {/* <!-- Card Body --> */}
-                    <div class="card-body">
-                        <div class="">
+                    <div className="card-body">
+                        <div className="">
                             <MultiAxisLine options={{ maintainAspectRatio: false }} />
                         </div>
                     </div>
@@ -62,29 +65,29 @@ function MeasurementsPage(props) {
             </div>
 
             {/* Conductivity Levels */}
-            <div class="col-xl-12 col-lg-12">
-                <div class="card border-left-warning shadow mb-4">
+            <div className="col-xl-12 col-lg-12">
+                <div className="card border-left-warning shadow mb-4">
                     {/* <!-- Card Header - Dropdown --> */}
                     <div
-                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Conductivity Levels</h6>
-                        <div class="dropdown no-arrow">
-                            <a class="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
+                        className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 className="m-0 font-weight-bold text-primary">Conductivity Levels</h6>
+                        <div className="dropdown no-arrow">
+                            <a className="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                 aria-labelledby="dropdownMenuLink">
-                                <div class="dropdown-header">Choose an option:</div>
-                                <a class="dropdown-item" href="#">Reload data</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Close</a>
+                                <div className="dropdown-header">Choose an option:</div>
+                                <a className="dropdown-item" href="#">Reload data</a>
+                                <div className="dropdown-divider"></div>
+                                <a className="dropdown-item" href="#">Close</a>
                             </div>
                         </div>
                     </div>
                     {/* <!-- Card Body --> */}
-                    <div class="card-body">
-                        <div class="">
+                    <div className="card-body">
+                        <div className="">
                             <MultiAxisLine options={{ maintainAspectRatio: false }}/>
                         </div>
                     </div>
@@ -92,29 +95,29 @@ function MeasurementsPage(props) {
             </div>
 
             {/* Temperature */}
-            <div class="col-xl-12 col-lg-12" style={{ width: "100%" }}>
-                <div class="card border-left-warning shadow mb-4">
+            <div className="col-xl-12 col-lg-12" style={{ width: "100%" }}>
+                <div className="card border-left-warning shadow mb-4">
                     {/* <!-- Card Header - Dropdown --> */}
                     <div
-                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 class="m-0 font-weight-bold text-primary">Temperature</h6>
-                        <div class="dropdown no-arrow">
-                            <a class="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
+                        className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 className="m-0 font-weight-bold text-primary">Temperature</h6>
+                        <div className="dropdown no-arrow">
+                            <a className="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                 aria-labelledby="dropdownMenuLink">
-                                <div class="dropdown-header">Choose an option:</div>
-                                <a class="dropdown-item" href="#">Reload data</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Close</a>
+                                <div className="dropdown-header">Choose an option:</div>
+                                <a className="dropdown-item" href="#">Reload data</a>
+                                <div className="dropdown-divider"></div>
+                                <a className="dropdown-item" href="#">Close</a>
                             </div>
                         </div>
                     </div>
                     {/* <!-- Card Body --> */}
-                    <div class="card-body">
-                        <div class="">
+                    <div className="card-body">
+                        <div className="">
                             <MultiAxisLine options={{ maintainAspectRatio: false }} />
                         </div>
                     </div>

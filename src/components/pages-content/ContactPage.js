@@ -8,7 +8,10 @@ function ContactPage(props) {
 //   LOGIC CODE GOES HERE !!
   return (<>
     {/* <!-- Page Heading --> */}
-    <h1 className="h1 mb-2 text-gray-800">Contact</h1>
+    <h1 className="h1 mb-2 text-gray-800"
+        style={{ textAlign: 'center' }}>
+            Contact
+    </h1>
 
     {/* Contact details of WaterCare Guard */}
     <div class="col-xl-3 col-md-6 mb-4">

@@ -15,7 +15,10 @@ function DeviceSinglePage(props) {
 
   return (<>
     {/* <!-- Page Heading --> */}
-    <h1 className="h1 mb-2 text-gray-800">Device Single - [Device id/name prop] </h1>
+    <h1 className="h1 mb-2 text-gray-800"
+        style={{ textAlign: 'center' }}>
+          Device Single - [Device id/name prop]
+    </h1>
 
     {/* Warnings section */}
     <div>
