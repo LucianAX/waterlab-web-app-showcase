@@ -1,12 +1,17 @@
 import React from 'react';
-// import { useTable } from 'react-table';
+import { useTable } from 'react-table';
 
-function TableTemplate(props) {
-  const { getTableProps,
+
+function Table(props) {
+    const { columns, data } = props.tableColumnsData;
+
+    const {
+        getTableProps,
         getTableBodyProps,
         headerGroups,
         rows,
-        prepareRow } = props.tableUtils;
+        prepareRow,
+    } = useTable({ columns, data });
 
   return (
     <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
@@ -56,4 +61,4 @@ function TableTemplate(props) {
   )
 }
 
-export default TableTemplate;
+export default Table;

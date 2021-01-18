@@ -48,7 +48,7 @@ const options = {
 const MultiAxisLine = () => (
   <>
     <div className='header'>
-      <h1 className='title'>Multi Axis Line Chart</h1>
+      <h3 className='title'>Multi Axis Line Chart</h3>
       <div className='links'>
         <a
           className='btn btn-gh'

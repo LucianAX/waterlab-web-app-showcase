@@ -12,7 +12,7 @@ import LogoutModal from './LogoutModal';
 
 // Pages Content
 import LoginPage from '../pages-content/LoginPage';
-import OverviewPage from '../pages-content/OverviewPage';
+import OverviewPage from '../pages-content/Overview/OverviewPage';
 import MeasurementsPage from '../pages-content/MeasurementsPage';
 import DeviceListPage from '../pages-content/DeviceListPage';
 import DeviceSinglePage from '../pages-content/DeviceSinglePage';

@@ -2,93 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTable } from 'react-table';
 
-import VerticalBar from '../chart-components/VerticalBar';
+// importing components
+import VerticalBar from '../../chart-components/VerticalBar';
 // import [chart] from '../chart-components/';
-import TableTemplate from '../table-components/TableTemplate';
+import ContainerTable from '../../table-components/ContainerTable';
 
+// importing utilitaries
+import { Units, Sensors, Measurements } from '../../../utils/global_state.js';
 
 function OverviewPage(props) {
-//   LOGIC CODE GOES HERE !!
-    const data = React.useMemo(
-        () => [
-        {
-            col1: '0007',
-            col2: 'PoC Device',
-            col3: 'PH',
-            col4: '9.0',
-            col5: '-',
-            col6: '18:00'
-        },
-        {
-            col1: '7373',
-            col2: 'Test Well Vejen',
-            col3: 'Conductivity',
-            col4: '40',
-            col5: 'S/m',
-            col6: '15:00'
-        },
-        {
-            col1: '6400',
-            col2: 'Mock Device Sonderbronx',
-            col3: 'Temperature',
-            col4: '19',
-            col5: 'C',
-            col6: '20:00'
-        },
-        ],
-        []
-    );
-
-    const columns = React.useMemo(
-        () => [
-        {
-            Header: 'Device ID',
-            accessor: 'col1', // accessor is the "key" in the data
-        },
-        {
-            Header: 'Device Name',
-            accessor: 'col2',
-        },
-        {
-            Header: 'Measurement Type',
-            accessor: 'col3',
-        },
-        {
-            Header: 'Measurement Unit',
-            accessor: 'col4',
-        },
-        {
-            Header: 'Measurement Value',
-            accessor: 'col5',
-        },
-        {
-            Header: 'Time created',
-            accessor: 'col6',
-        }
-        ],
-        []
-    )
-
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = useTable({ columns, data });
-
-    const tableUtils = {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    }
-
+    
     return (
     <>
     {/* <!-- Page Heading --> */}
-    <h1 className="h1 mb-2 position-static" 
+    <h1 className="h1 mb-2" 
         style={{ textAlign: 'center',
                  color: '#0A556B' }}>
             Overview
@@ -220,7 +147,7 @@ function OverviewPage(props) {
                     {/* <!-- Card Body --> */}
                     <div className="card-body">
                         <div className="">
-                            <TableTemplate tableUtils={ tableUtils } />
+                            <ContainerTable />
                         </div>
                         <div className="">
                             <VerticalBar options={{ maintainAspectRatio: false }} />
@@ -253,7 +180,7 @@ function OverviewPage(props) {
                     {/* <!-- Card Body --> */}
                     <div className="card-body">
                         <div className="">
-                            <TableTemplate tableUtils={ tableUtils } />
+                            <ContainerTable />
                         </div>
                         <div className="">
                             <VerticalBar options={{ maintainAspectRatio: false }}/>
