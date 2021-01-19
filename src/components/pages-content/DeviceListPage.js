@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import VerticalBar from '../chart-components/VerticalBar';
 // import [chart] from '../chart-components/VerticalBar';
+import ContainerTable from '../table-components/ContainerTable';
+
+import { units } from '../../utils/global_state.js';
 
 function DeviceListPage(props) {
   /* const allDevicesArray = Mapping function for iterating through devices */
@@ -14,8 +17,46 @@ function DeviceListPage(props) {
           // Device data in table row
       </Device> */
 
-  //   LOGIC CODE GOES HERE !!
+    const dataArray = [];
+    for (let i = 0; i < units.length; i++) {
+        dataArray.push(
+            {
+                col1: units[i].Id,
+                col2: units[i].Name,
+                col3: units[i].Active,
+                col4: units[i].LocLat,
+                col5: units[i].LocLong,
+                col6: units[i].DateRegistered,
+            }
+        );
+    }   
 
+    const columnsArray = [
+        {
+            Header: 'Device ID', //Unit.Id
+            accessor: 'col1', // accessor is the "key" in the data
+        },
+        {
+            Header: 'Device Name', //Unit.Name 
+            accessor: 'col2',
+        },
+        {
+            Header: 'Device Status',
+            accessor: 'col3',
+        },
+        {
+            Header: 'Location Latitude', //Measurement.[TempC or Ph or Conductivity]
+            accessor: 'col4',
+        },
+        {
+            Header: 'Location Longitude', //SI unit
+            accessor: 'col5',
+        },
+        {
+            Header: 'Date registered', //Measurement.TimeCreated
+            accessor: 'col6',
+        }
+    ];
 
   return (<>
     {/* <!-- Page Heading --> */}
@@ -106,11 +147,39 @@ function DeviceListPage(props) {
     </div>
 
     {/* All Devices Section */}
-    <div>
+    <div className="row">
         {/* {allDevicesArray} */}
         Device Entry
         Device Entry
         Device Entry
+        <div className="col-xl-12 col-lg-12" style={{ width: "100%" }}>
+        <div className="card border-left-primary shadow mb-4">
+            {/* <!-- Card Header - Dropdown --> */}
+            <div
+                className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 className="m-0 font-weight-bold text-danger">All Devices</h6>
+                <div className="dropdown no-arrow">
+                    <a className="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                        aria-labelledby="dropdownMenuLink">
+                        <div className="dropdown-header">Choose an option:</div>
+                        <a className="dropdown-item" href="#">Reload data</a>
+                        <div className="dropdown-divider"></div>
+                        <a className="dropdown-item" href="#">Close</a>
+                    </div>
+                </div>
+            </div>
+            {/* <!-- Card Body --> */}
+            <div className="card-body">
+                <div className="">
+                    <ContainerTable dataArray={dataArray} columnsArray={columnsArray} />
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
   </>)

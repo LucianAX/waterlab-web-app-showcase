@@ -1,58 +1,69 @@
 import React from 'react';
 import Table from './Table';
 // importing utilitaries
-import { Units, Sensors, Measurements } from '../../utils/global_state.js';
+// import { units, sensors, measurements } from '../../utils/global_state.js';
 
 function ContainerTable(props) {
+  const { dataArray, columnsArray } = props;
+  
+  // TROUBLESHOOTING
+  // const { dataArray } = props;
+
+  // const dataArray = [
+  //     {
+  //        col1: 'Hello',
+  //        col2: 'World',
+  //      },
+
+  //      {
+  //        col1: 'react-table',
+  //        col2: 'rocks',
+  //      },
+  // ]
+  
+
+  // const { columnsArray } = props;
+
+  // const columnsArray = [
+  //     {
+  //        Header: 'Column 1',
+  //        accessor: 'col1', // accessor is the "key" in the data
+  //      },
+  //      {
+  //        Header: 'Column 2',
+  //        accessor: 'col2',
+  //      },
+  //      {
+  //        Header: 'Column 3',
+  //        accessor: 'col3',
+  //      },
+  //      {
+  //        Header: 'Column 4',
+  //        accessor: 'col4',
+  //      },
+  //      {
+  //        Header: 'Column 5',
+  //        accessor: 'col5',
+  //      },
+  //      {
+  //        Header: 'Column 6',
+  //        accessor: 'col6',
+  //      },
+  // ]
+
   const data = React.useMemo(
-        () => [
-            {
-                col1: Units[0].Id,
-                col2: Units[0].Name,
-                col3: 'PH',
-                col4: Measurements[0].Ph.toString(),
-                col5: Measurements[0].Unit_Id,
-                col6: Measurements[0].TimeCreated
-            },
-        ],
-        []
+      () => dataArray,
+      []
     );
 
     const columns = React.useMemo(
-        () => [
-        {
-            Header: 'Device ID', //Unit.Id
-            accessor: 'col1', // accessor is the "key" in the data
-        },
-        {
-            Header: 'Device Name', //Unit.Name 
-            accessor: 'col2',
-        },
-        {
-            Header: 'Measurement Type', //Measurement.[type? TempC or Ph or Conductivity]
-            accessor: 'col3',
-        },
-        {
-            Header: 'Measurement Value', //Measurement.[TempC or Ph or Conductivity]
-            accessor: 'col4',
-        },
-        {
-            Header: 'Measurement Unit', //Measuremnt.Unit_Id 
-            accessor: 'col5',
-        },
-        {
-            Header: 'Time created', //Measurement.TimeCreated
-            accessor: 'col6',
-        }
-        ],
-        []
+      () => columnsArray,
+      []
     );
-
-    const tableColumnsData = { columns, data };
 
   return (<>
     <div className="">
-        <Table tableColumnsData={ tableColumnsData } />
+        <Table columns={columns} data={data} />
     </div>
   </>)
 }

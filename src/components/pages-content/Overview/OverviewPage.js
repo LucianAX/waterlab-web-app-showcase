@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import { useTable } from 'react-table';
 
 // importing components
+import Warning from '../../page-components/Warning';
 import VerticalBar from '../../chart-components/VerticalBar';
 // import [chart] from '../chart-components/';
 import ContainerTable from '../../table-components/ContainerTable';
 
 // importing utilitaries
-import { Units, Sensors, Measurements } from '../../../utils/global_state.js';
+import { warnings } from '../../../utils/global_state.js';
 
 function OverviewPage(props) {
     
-    return (
-    <>
+    return (<>
+    
     {/* <!-- Page Heading --> */}
     <h1 className="h1 mb-2" 
         style={{ textAlign: 'center',
@@ -117,11 +118,17 @@ function OverviewPage(props) {
             <h2>Warnings</h2>
         </div>
         
-        {/* Conditional for displaying device with warning */}
         {/* Device name */}
         {/* Device data in tabel */}
         
         <div className="row">
+            
+            {
+                warnings ? warnings.map(warning => <Warning warning={warning} />)
+                        : <h4>No warnings so far! Everything clear on the horizon :)</h4>
+            }
+
+           {/* { warnings.map(warning => <Warning warning={warning} />) } */}
 
             {/* Warning #1 */}
             <div className="col-xl-12 col-lg-12" style={{ width: "100%" }}>
@@ -191,8 +198,7 @@ function OverviewPage(props) {
         </div>
     </div>
 
-    </>
-    )
+    </>)
 };
 
 export default OverviewPage;

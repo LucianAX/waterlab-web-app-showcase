@@ -3,7 +3,7 @@ import { useTable } from 'react-table';
 
 
 function Table(props) {
-    const { columns, data } = props.tableColumnsData;
+    const { columns, data } = props;
 
     const {
         getTableProps,

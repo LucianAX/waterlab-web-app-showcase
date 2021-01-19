@@ -1,57 +1,10 @@
-// Server GET Request - General
-fetch('https://GETendpoint')
-    .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Request failed!');
-    }, networkError => console.log(networkError.message))
-    .then(jsonResponse => {
-      //Code to execute
-    });
-
-// Server GET Request - Units (understood as devices)
-fetch('https://GETendpoint')
-    .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Request failed!');
-    }, networkError => console.log(networkError.message))
-    .then(jsonResponse => {
-      //Code to execute
-      // const Units = jsonResponse; //array of Unit objects
-    });
-
-// Server GET Request - Measurements
-fetch('https://GETendpoint')
-    .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Request failed!');
-    }, networkError => console.log(networkError.message))
-    .then(jsonResponse => {
-      //Code to execute
-      // const Measurements = jsonResponse; //array of measurement objects
-    });
-
-// Server GET Request - Sensors
-fetch('https://GETendpoint')
-    .then(response => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error('Request failed!');
-    }, networkError => console.log(networkError.message))
-    .then(jsonResponse => {
-      // Code to execute
-      // const Sensors = jsonResponse; //Array of sensor objects
-    });
-
+let warnings = [];
+let warningPointPH = 8.5;
+let warningPointConductivity = 30;
+let warningPointTemperature = 17;
 
 //Mock Data
-const Units = [
+const units = [
   {
     Id: '0007',
     Name: 'PoC Device',
@@ -84,13 +37,13 @@ const Units = [
   },
 ]
 
-const Measurements = [
+const measurements = [
   {
     MeasurementId: '123',
     TempC: 15.5,
     Ph: 9.0,
     TimeCreated: '18:00 15.01.2021',
-    Unit_Id: '-', //is it unit of measurement or unit as in device?
+    Unit_Id: '0007', 
     Conductivity: 20,
   },
   {
@@ -98,7 +51,7 @@ const Measurements = [
     TempC: 12.0,
     Ph: 7.5,
     TimeCreated: '15:00 12.01.2021',
-    Unit_Id: 'S/m',
+    Unit_Id: '7373',
     Conductivity: 40,
   },
   {
@@ -106,12 +59,12 @@ const Measurements = [
     TempC: 16.5,
     Ph: 8.0,
     TimeCreated: '20:00 18.01.2021',
-    Unit_Id: 'C',
+    Unit_Id: '6400',
     Conductivity: 20,
   },
 ]
 
-const Sensors = [
+const sensors = [
   {
     Id: 'xyz',
     Manufacturer: 'Chinese company no. 10000000',
@@ -136,4 +89,103 @@ const Sensors = [
 ]
 
 
-export { Units, Sensors, Measurements };
+
+// Server GET Request - General
+/*
+fetch('https://GETendpoint')
+    .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Request failed!');
+    }, networkError => console.log(networkError.message))
+    .then(jsonResponse => {
+      //Code to execute
+    });
+*/
+
+// Server GET Request - Units (understood as devices)
+/*
+fetch('https://GETendpointUnits')
+    .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Request failed!');
+    }, networkError => console.log(networkError.message))
+    .then(jsonResponse => {
+      //Code to execute
+      // const Units = jsonResponse; //array of Unit objects
+    });
+*/
+
+// Server GET Request - Measurements
+/*
+fetch('https://GETendpointMeasurements')
+    .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Request failed!');
+    }, networkError => console.log(networkError.message))
+    .then(jsonResponse => {
+      //Code to execute
+      // checkMeasurementsForWarnings();
+    });
+*/
+
+// Server GET Request - Sensors
+/*
+fetch('https://GETendpointSensors')
+    .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error('Request failed!');
+    }, networkError => console.log(networkError.message))
+    .then(jsonResponse => {
+      // Code to execute
+      // const sensors = jsonResponse; //Array of sensor objects
+    });
+*/
+
+// Check Measurements for passing warning points
+const checkMeasurementsForWarnings = () => {
+  measurements.forEach(
+    measurement => {
+      const findNameOfUnitWithWarning = (ID) => {
+        const unitWithWarning = units.find(unit => unit.Id === ID);
+        return unitWithWarning.Name;
+      };
+      
+      if (measurement.Ph > warningPointPH) {
+        warnings.push({
+            measurement: measurement,
+            warningType: 'PH',
+            // unitName: findNameOfUnitWithWarning(measurement.Unit_Id),
+            
+        });  
+      }
+      if (measurement.Conductivity > warningPointConductivity) {
+        warnings.push({
+            measurement: measurement,
+            warningType: 'Conductivity',
+            // unitName: findNameOfUnitWithWarning(measurement.Unit_Id),
+          
+        });
+      }
+      if (measurement.TempC > warningPointTemperature) {
+        warnings.push({
+            measurement: measurement,
+            warningType: 'Temperature',
+            // unitName: findNameOfUnitWithWarning(measurement.Unit_Id),
+            
+        })
+      }
+    }
+  );
+}
+
+checkMeasurementsForWarnings();
+
+export { warnings, units, sensors, measurements };

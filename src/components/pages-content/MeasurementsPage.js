@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTable } from 'react-table';
+// import { useTable } from 'react-table';
 
 import MultiAxisLine from '../chart-components/MultiAxisLine';
 // import [chart] from '../chart-components/VerticalBar';
-import TableTemplate from '../table-components/Table';
+import ContainerTable from '../table-components/ContainerTable';
 
 function MeasurementsPage(props) {
   // const warningDevices = mapping function for iterating through warnings for all devices
   //    <Warning Device Entry Component></Device>
 
-  //   LOGIC CODE GOES HERE !!
-    const data = React.useMemo(
-        () => [
+    const dataArray = [
         {
             col1: '0007',
             col2: 'PoC Device',
@@ -37,12 +35,9 @@ function MeasurementsPage(props) {
             col5: 'C',
             col6: '20:00'
         },
-        ],
-        []
-    );
+    ];
 
-    const columns = React.useMemo(
-        () => [
+    const columnsArray = [
         {
             Header: 'Device ID',
             accessor: 'col1', // accessor is the "key" in the data
@@ -67,26 +62,8 @@ function MeasurementsPage(props) {
             Header: 'Time created',
             accessor: 'col6',
         }
-        ],
-        []
-    );
+    ];
 
-    const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = useTable({ columns, data });
-
-    const tableUtils = {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    }
-  
     return (<>
     {/* <!-- Page Heading --> */}
     <h1 className="h1 mb-2"
@@ -129,7 +106,7 @@ function MeasurementsPage(props) {
                     <div className="card-body">
                         <div className="row">
                             <div className="col-xl-9 col-lg-8">
-                                <TableTemplate tableUtils={ tableUtils } />
+                                <ContainerTable dataArray={ dataArray } columnsArray={ columnsArray } />
                             </div>
                             <div className="col-xl-3 col-lg-4">
                                 <MultiAxisLine options={{ maintainAspectRatio: false }} />
