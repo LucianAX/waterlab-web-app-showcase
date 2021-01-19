@@ -8,10 +8,7 @@ function ProfilePage(props) {
 //   LOGIC CODE GOES HERE !!
   return (<>
     {/* <!-- Page Heading --> */}
-    <h1 className="h1 mb-2 text-gray-800"
-        style={{ textAlign: 'center' }}>
-          Profile
-    </h1>
+    <h1 className="h1 mb-2 text-gray-800">Profile</h1>
 
     {/* Profile details */}
   </>)
