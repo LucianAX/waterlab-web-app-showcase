@@ -6,6 +6,32 @@ import { Link } from 'react-router-dom';
 
 function MapPage(props) {
 //   LOGIC CODE GOES HERE !!
+    // function initMap() {
+    // const map = new google.maps.Map(document.getElementById("map"), {
+    //     zoom: 10,
+    //     center: { lat: 54.9629533, lng: 9.7766695 },
+    // });
+
+    // const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    // const markers = locations.map((location, i) => {
+    //     return new google.maps.Marker({
+    //     position: location,
+    //     label: labels[i % labels.length],
+    //     });
+    // });
+
+    // new MarkerClusterer(map, markers, {
+    //         imagePath:
+    //         "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+    //     });
+    // }
+
+    // const locations = [
+    // { lat: 54.905306, lng: 9.654167 },
+    // { lat: 54.998056, lng: 9.670972 },
+    // { lat: 55.050194, lng: 9.806806 },
+    // ];
 
   return (<>
     {/* <!-- Page Heading --> */}
@@ -40,11 +66,12 @@ function MapPage(props) {
                     <div class="">
 
                         {/* ZOLTAN'S TASK */}
-                        <iframe title="map" class="col-xl-12 col-lg-12"
+                        {/* <iframe title="map" class="col-xl-12 col-lg-12"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25940.879716104955!2d9.78649102763798!3d54.92272710118654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b337c2e0ee44ed%3A0x49a0979574e7aeeb!2zNjQwMCBTw7huZGVyYm9yZywgRMOhbnNrbw!5e0!3m2!1ssk!2sus!4v1604918481297!5m2!1ssk!2sus"
                                 width="750" height="400" frameborder="0" style={{ border: 1 }}
                                 allowfullscreen="" aria-hidden="true" tabindex="0">
-                        </iframe>
+                        </iframe> */}
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
