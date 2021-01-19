@@ -122,79 +122,15 @@ function OverviewPage(props) {
         {/* Device data in tabel */}
         
         <div className="row">
-            
+        {/*             
             {
                 warnings ? warnings.map(warning => <Warning warning={warning} />)
                         : <h4>No warnings so far! Everything clear on the horizon :)</h4>
-            }
+            } */}
 
-           {/* { warnings.map(warning => <Warning warning={warning} />) } */}
+           { warnings.map(warning => <Warning warning={warning} />) }
+           {/* <h4>No warnings so far! Everything clear on the horizon :)</h4> */}
 
-            {/* Warning #1 */}
-            <div className="col-xl-12 col-lg-12" style={{ width: "100%" }}>
-                <div className="card border-left-danger shadow mb-4">
-                    {/* <!-- Card Header - Dropdown --> */}
-                    <div
-                        className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 className="m-0 font-weight-bold text-danger">Warning #{1}</h6>
-                        <div className="dropdown no-arrow">
-                            <a className="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                            </a>
-                            <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                aria-labelledby="dropdownMenuLink">
-                                <div className="dropdown-header">Choose an option:</div>
-                                <a className="dropdown-item" href="#">Reload data</a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="#">Close</a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* <!-- Card Body --> */}
-                    <div className="card-body">
-                        <div className="">
-                            <ContainerTable />
-                        </div>
-                        <div className="">
-                            <VerticalBar options={{ maintainAspectRatio: false }} />
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Warning #2 */}
-            <div className="col-xl-12 col-lg-12">
-                <div className="card border-left-danger shadow mb-4">
-                    {/* <!-- Card Header - Dropdown --> */}
-                    <div
-                        className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h6 className="m-0 font-weight-bold text-danger">Warning #{2}</h6>
-                        <div className="dropdown no-arrow">
-                            <a className="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                            </a>
-                            <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                                aria-labelledby="dropdownMenuLink">
-                                <div className="dropdown-header">Choose an option:</div>
-                                <a className="dropdown-item" href="#">Reload data</a>
-                                <div className="dropdown-divider"></div>
-                                <a className="dropdown-item" href="#">Close</a>
-                            </div>
-                        </div>
-                    </div>
-                    {/* <!-- Card Body --> */}
-                    <div className="card-body">
-                        <div className="">
-                            <ContainerTable />
-                        </div>
-                        <div className="">
-                            <VerticalBar options={{ maintainAspectRatio: false }}/>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -202,3 +138,70 @@ function OverviewPage(props) {
 };
 
 export default OverviewPage;
+
+
+            // {/* Warning #1 */}
+            // <div className="col-xl-12 col-lg-12" style={{ width: "100%" }}>
+            //     <div className="card border-left-danger shadow mb-4">
+            //         {/* <!-- Card Header - Dropdown --> */}
+            //         <div
+            //             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            //             <h6 className="m-0 font-weight-bold text-danger">Warning #{1}</h6>
+            //             <div className="dropdown no-arrow">
+            //                 <a className="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
+            //                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            //                     <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            //                 </a>
+            //                 <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+            //                     aria-labelledby="dropdownMenuLink">
+            //                     <div className="dropdown-header">Choose an option:</div>
+            //                     <a className="dropdown-item" href="#">Reload data</a>
+            //                     <div className="dropdown-divider"></div>
+            //                     <a className="dropdown-item" href="#">Close</a>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //         {/* <!-- Card Body --> */}
+            //         <div className="card-body">
+            //             <div className="">
+            //                 <ContainerTable />
+            //             </div>
+            //             <div className="">
+            //                 <VerticalBar options={{ maintainAspectRatio: false }} />
+            //             </div>
+            //         </div>
+            //     </div>
+            // </div>
+
+            // {/* Warning #2 */}
+            // <div className="col-xl-12 col-lg-12">
+            //     <div className="card border-left-danger shadow mb-4">
+            //         {/* <!-- Card Header - Dropdown --> */}
+            //         <div
+            //             className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            //             <h6 className="m-0 font-weight-bold text-danger">Warning #{2}</h6>
+            //             <div className="dropdown no-arrow">
+            //                 <a className="dropdown-toggle" id="dropdownMenuLink" href="#" role="button" 
+            //                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            //                     <i className="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            //                 </a>
+            //                 <div className="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+            //                     aria-labelledby="dropdownMenuLink">
+            //                     <div className="dropdown-header">Choose an option:</div>
+            //                     <a className="dropdown-item" href="#">Reload data</a>
+            //                     <div className="dropdown-divider"></div>
+            //                     <a className="dropdown-item" href="#">Close</a>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //         {/* <!-- Card Body --> */}
+            //         <div className="card-body">
+            //             <div className="">
+            //                 <ContainerTable />
+            //             </div>
+            //             <div className="">
+            //                 <VerticalBar options={{ maintainAspectRatio: false }}/>
+            //             </div>
+            //         </div>
+            //     </div>
+            // </div>

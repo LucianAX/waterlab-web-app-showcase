@@ -1,3 +1,4 @@
+/* 
 export const ApplicationName = '/ClientApp';
 
 export const QueryParameterNames = {
@@ -36,3 +37,4 @@ export const ApplicationPaths = {
   IdentityRegisterPath: '/Identity/Account/Register',
   IdentityManagePath: '/Identity/Account/Manage'
 };
+*/
